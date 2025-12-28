@@ -9,17 +9,14 @@ const sendToTab = (type: string) => {
     const tabId = tabs[0]?.id;
     if (!tabId) return;
 
-    // 1️⃣ Try sending message
     chrome.tabs.sendMessage(tabId, { type }, () => {
       if (chrome.runtime.lastError) {
-        // 2️⃣ If no receiver → inject content script
         chrome.scripting.executeScript(
           {
             target: { tabId },
             files: ["dist/content.js"]
           },
           () => {
-            // 3️⃣ Retry message after inject
             chrome.tabs.sendMessage(tabId, { type });
           }
         );
