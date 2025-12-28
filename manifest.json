@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Web Scraper (TS)",
+  "version": "1.0",
+  "description": "Scrape data from any website using element selection",
+
+  
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+
+  "action": {
+    "default_popup": "public/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

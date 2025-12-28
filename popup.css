@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 260px;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+ul {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 16px;
+}
