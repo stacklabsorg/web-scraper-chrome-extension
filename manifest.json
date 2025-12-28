@@ -1,10 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Universal Web Scraper (TS)",
+  "name": "Universal Web Scraper",
   "version": "1.0",
   "description": "Scrape data from any website using element selection",
 
-  
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
@@ -12,7 +11,18 @@
   },
 
   "action": {
-    "default_popup": "public/popup.html"
+    "default_popup": "public/popup.html",
+    "default_icon": {
+      "16": "public/16.png",
+      "48": "public/48.png",
+      "128": "public/128.png"
+    }
+  },
+
+  "icons": {
+    "16": "public/16.png",
+    "48": "public/48.png",
+    "128": "public/128.png"
   },
 
   "content_scripts": [
